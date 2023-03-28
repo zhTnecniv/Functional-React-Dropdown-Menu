@@ -1,9 +1,12 @@
+import styles from './Menu.module.css';
+
 const Menu = (props) => {
     const { options, menuName, handleClick, selectedOption } = props;
     return (
         <div>
-            <label for={`for-${menuName}`}>{menuName}:</label>
-            <select name={`${menuName}`}
+            <label>{menuName}:</label>
+            <select
+                className={styles.select}
                 onChange={(e) => handleClick(e.target.value)}>
                 {options.map((opt, idx) =>
                     <option
